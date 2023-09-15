@@ -1,0 +1,2 @@
+#define HelloProject_VERSION_MAJOR @HelloProject_VERSION_MAJOR@
+#define HelloProject_VERSION_MINOR @HelloProject_VERSION_MINOR@
