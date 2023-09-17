@@ -7,9 +7,9 @@ project(HelloProject VERSION 0.1.0)
 
 # configure a header file to pass some of the CMake settings
 # to the source code
-configure_file(HelloConfig.h.in HelloConfig.h)
+configure_file(src/HelloConfig.h.in HelloConfig.h)
 
-add_executable(HelloProject main.cpp)
+add_executable(HelloProject src/main.cpp)
 
 #add binary tree to search path that allows to find HelloConfig.h 
 #to find it inside main.cpp file
