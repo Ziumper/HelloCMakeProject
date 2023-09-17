@@ -2,26 +2,53 @@
 
 Simple project for learning Cmake
 
-# Scripts
+## Windows Setup
 
-All execution scripts are stored in bin folder
+https://stackoverflow.com/questions/70197831/unable-to-determine-what-cmake-generator-to-use-vs-code-windows-10
 
-For building with powershell use
-```powershell 
-.\bin\windows\build.bat
-```
+Firstly check the system.
 
-## Dependecies in Windows
+Install MINGW https://www.msys2.org/
 
-- [MSYS2](https://www.msys2.org/)
-- [Clang](https://packages.msys2.org/package/mingw-w64-x86_64-clang)
-
-### Update MSYS2
+Install gcc, g++, gdb, and cmake using pacman.
 
 ```
-pacman -Syuu.
+pacman -S mingw-w64-x86_64-gcc
+
+pacman -S mingw-w64-x86_64-gdb
+
+pacman -S mingw-w64-x86_64-cmake
 ```
-Instllation of clang
+
+Check installation:
+
 ```
-pacman -S mingw-x64-x86_64-clang
+gcc --version
+
+g++ --version
+
+gdb --version
 ```
+
+Edit environment variables for your account (PATH)
+```
+C:\msys64\mingw64\bin
+```
+
+## VSCode
+
+For cmake project on Vscode:
+
+Create a cmake project: https://code.visualstudio.com/docs/cpp/cmake-linux#_create-a-cmake-project
+
+Choose the Kit (Toolchain) which was installed before
+
+Set cmake.cmakePath (If you installed with pacman, the path should be same as gcc/g++.
+
+```
+"cmake.cmakePath": "C:\msys64\mingw64\bin\cmake.exe"
+```
+
+Reset VScode: Ctrl+shift+P and type "CMake:Reset CMake Tools for Extension State"
+
+Configure project: Ctrl+shift+P and type "CMake: Configure". You will see "built" directory and generated files.
