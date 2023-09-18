@@ -56,6 +56,8 @@ Set inside extension settings menu Cmake Generator to use
 MinGW Makefiles
 ```
 
+Choosing compiler:
+
 Reset VScode: Ctrl+shift+P and type "CMake:Reset CMake Tools for Extension State"
 
 use clang for a compiler
