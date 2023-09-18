@@ -49,6 +49,11 @@ Set cmake.cmakePath (If you installed with pacman, the path should be same as gc
 "cmake.cmakePath": "C:\msys64\mingw64\bin\cmake.exe"
 ```
 
+Set inside extension settings menu Cmake Generator to use
+```
+MinGW Makefiles
+```
+
 Reset VScode: Ctrl+shift+P and type "CMake:Reset CMake Tools for Extension State"
 
 Configure project: Ctrl+shift+P and type "CMake: Configure". You will see "built" directory and generated files.
