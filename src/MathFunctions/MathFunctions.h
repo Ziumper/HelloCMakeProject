@@ -1,5 +1,6 @@
 #pragma once
 
-namespace mathfunctions {
-double sqrt(double x);
+namespace mathfunctions
+{
+    double sqrt(double x);
 }

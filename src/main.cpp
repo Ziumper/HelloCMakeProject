@@ -7,6 +7,9 @@
 
 int main(int argc, char *argv[])
 {
+
+  std::cout << "Testing Hello Project" << std::endl;
+
   if (argc < 2)
   {
     // report version
