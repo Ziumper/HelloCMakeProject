@@ -57,3 +57,13 @@ MinGW Makefiles
 Reset VScode: Ctrl+shift+P and type "CMake:Reset CMake Tools for Extension State"
 
 Configure project: Ctrl+shift+P and type "CMake: Configure". You will see "built" directory and generated files.
+
+Format code  (https://stackoverflow.com/questions/56883170/beautify-c-files-in-vscode)
+Simple go to command palette using Ctrl+Shift+P
+
+search "format"
+
+and select "Format document with"
+
+and simply select "C/C++"
+

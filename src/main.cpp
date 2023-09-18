@@ -5,9 +5,10 @@
 #include "MathFunctions.h"
 #include "HelloConfig.h"
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-  if (argc < 2) {
+  if (argc < 2)
+  {
     // report version
     std::cout << argv[0] << " Version " << HelloProject_VERSION_MAJOR << "."
               << HelloProject_VERSION_MINOR << std::endl;
