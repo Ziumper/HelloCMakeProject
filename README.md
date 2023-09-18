@@ -35,7 +35,7 @@ Edit environment variables for your account (PATH)
 C:\msys64\mingw64\bin
 ```
 
-## VSCode
+### VSCode
 
 For cmake project on Vscode:
 
