@@ -1,10 +1,9 @@
 cmake_minimum_required(VERSION 3.27.4) #it means that is required cmake version of 3.27.4
 project(HelloProject VERSION 0.1.0) #let's the project name be HelloProject
 
-configure_file(src/HelloConfig.h.in HelloConfig.h)
-
-add_subdirectory(src/MathFunctions)
-list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/src/MathFunctions")
+####################################
+# Tests
+######################################
 
 include(FetchContent)
 FetchContent_Declare(
@@ -28,6 +27,16 @@ target_link_libraries(
 
 include(GoogleTest)
 gtest_discover_tests(hello_test)
+
+####################################
+# Project
+######################################
+
+configure_file(src/HelloConfig.h.in HelloConfig.h)
+
+add_subdirectory(src/MathFunctions)
+list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/src/MathFunctions")
+
 
 add_executable(HelloProject src/main.cpp)
 
