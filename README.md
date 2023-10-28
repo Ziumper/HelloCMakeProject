@@ -18,6 +18,8 @@ pacman -S mingw-w64-x86_64-gcc
 pacman -S mingw-w64-x86_64-gdb
 
 pacman -S mingw-w64-x86_64-cmake
+
+pacman -S mingw-w64-x86_64-clang
 ```
 
 Check installation:
@@ -54,7 +56,11 @@ Set inside extension settings menu Cmake Generator to use
 MinGW Makefiles
 ```
 
+Choosing compiler:
+
 Reset VScode: Ctrl+shift+P and type "CMake:Reset CMake Tools for Extension State"
+
+use clang for a compiler
 
 Configure project: Ctrl+shift+P and type "CMake: Configure". You will see "built" directory and generated files.
 
