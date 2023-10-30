@@ -1,32 +1,48 @@
 #include <cmath>
 #include <iostream>
 #include <string>
-
+#include <GLFW/glfw3.h>
 #include "MathFunctions.h"
 #include "HelloConfig.h"
 
-int main(int argc, char *argv[])
+int main()
 {
-
   std::cout << "Testing Hello Project" << std::endl;
 
-  if (argc < 2)
+  GLFWwindow* window;
+  int width, height;
+
+  if( !glfwInit() )
   {
-    // report version
-    std::cout << argv[0] << " Version " << HelloProject_VERSION_MAJOR << "."
-              << HelloProject_VERSION_MINOR << std::endl;
-    std::cout << "Usage: " << argv[0] << " number" << std::endl;
-    return 1;
+      fprintf( stderr, "Failed to initialize GLFW\n" );
+      exit( EXIT_FAILURE );
   }
 
-  // convert input to double
-  const double inputValue = std::stod(argv[1]);
+  // glfwWindowHint(GLFW_DEPTH_BITS, 16);
+  // glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE);
 
-  // TODO 6: Replace sqrt with mathfunctions::sqrt
+  window = glfwCreateWindow( 300, 300, "Hello Window", NULL, NULL );
+  if (!window)
+  {
+      fprintf( stderr, "Failed to open GLFW window\n" );
+      glfwTerminate();
+      exit( EXIT_FAILURE );
+  }
 
-  // calculate square root
-  const double outputValue = sqrt(inputValue);
-  std::cout << "The square root of " << inputValue << " is " << outputValue
-            << std::endl;
+  // Main loop
+  while( !glfwWindowShouldClose(window) )
+  {
+      // Swap buffers
+      glfwSwapBuffers(window);
+      glfwPollEvents();
+  }
+
+  // Terminate GLFW
+  glfwTerminate();
+
+  // Exit program
+  exit( EXIT_SUCCESS );
+
+
   return 0;
 }

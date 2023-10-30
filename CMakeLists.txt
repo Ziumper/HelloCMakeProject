@@ -1,6 +1,18 @@
 cmake_minimum_required(VERSION 3.27.4) #it means that is required cmake version of 3.27.4
 project(HelloProject VERSION 0.1.0) #let's the project name be HelloProject
 
+
+#####################################
+# GLFW
+####################################
+
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
+
+add_subdirectory(external/glfw-3.3.8)
+
 ####################################
 # Project
 ######################################
@@ -13,7 +25,7 @@ list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/src/MathFunctions")
 
 add_executable(HelloProject src/main.cpp)
 
-target_link_libraries(HelloProject MathFunctions)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE MathFunctions glfw)
 
 #add binary tree to search path that allows to find HelloConfig.h 
 #to find it inside main.cpp file
@@ -21,8 +33,6 @@ target_include_directories(HelloProject PUBLIC
                         "${PROJECT_BINARY_DIR}"
                         ${EXTRA_INCLUDES}
                         )
-
-
                         
 ####################################
 # Tests
