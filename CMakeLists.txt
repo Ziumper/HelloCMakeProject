@@ -11,40 +11,17 @@ add_subdirectory(external/googletest)
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 enable_testing()
-add_executable(
-  hello_test
-  test/hello_test.cpp
-)
-target_link_libraries(
-  hello_test
-  GTest::gtest_main
-)
-
 include(GoogleTest)
-gtest_discover_tests(hello_test)
 
+file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
-
-# add_subdirectory(external/googletest)
-
-# # For Windows: Prevent overriding the parent project's compiler/linker settings
-# set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-# enable_testing()
-# include(GoogleTest)
-
-# file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
-
-# # from list of files we'll create tests test_name.cpp -> test_name
-# foreach(_test_file ${TEST_SRC_FILES})
-#     get_filename_component(_test_name ${_test_file} NAME_WE)
-#     add_executable(${_test_name} ${_test_file})
-#     target_link_libraries(${_test_name} GTest::gtest_main)
-#     gtest_discover_tests(${_test_name})
-# endforeach()
-
-
-
+# from list of files we'll create tests test_name.cpp -> test_name
+foreach(_test_file ${TEST_SRC_FILES})
+    get_filename_component(_test_name ${_test_file} NAME_WE)
+    add_executable(${_test_name} ${_test_file})
+    target_link_libraries(${_test_name} GTest::gtest_main)
+    gtest_discover_tests(${_test_name})
+endforeach()
 
 ####################################
 # Project
