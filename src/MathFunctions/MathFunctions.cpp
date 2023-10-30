@@ -1,7 +1,7 @@
 #include "MathFunctions.h"
 #include "mysqrt.h"
 
-namespace mathfunctions
+namespace MathFunctions
 {
   double sqrt(double x)
   {

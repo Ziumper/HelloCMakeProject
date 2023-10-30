@@ -1,6 +1,6 @@
 #pragma once
 
-namespace mathfunctions
+namespace MathFunctions
 {
     namespace detail
     {

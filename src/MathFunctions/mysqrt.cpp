@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-namespace mathfunctions
+namespace MathFunctions
 {
   namespace detail
   {
