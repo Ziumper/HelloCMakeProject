@@ -1,13 +1,11 @@
 #include <cmath>
-#include <iostream>
 #include <string>
 #include <GLFW/glfw3.h>
 #include "MathFunctions.h"
 #include "HelloConfig.h"
 
-int main()
+int WinMain()
 {
-  std::cout << "Testing Hello Project" << std::endl;
 
   GLFWwindow* window;
   int width, height;
