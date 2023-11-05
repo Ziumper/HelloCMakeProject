@@ -1,4 +1,4 @@
-# Hello Project in Learning CMake
+# Hello Project for CMake
 
 Simple project for learning Cmake
 
